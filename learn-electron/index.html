@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <title>Hello World!</title>
+</head>
+
+<body style="user-select: none;">
+
+    <h1>Hello World!</h1>
+    We are using Node.js <span id="node-version"></span>,
+    Chromium <span id="chrome-version"></span>,
+    and Electron <span id="electron-version"></span>.
+    <h1>relload11</h1>
+    <a href="child.html">Go To Child</a>
+    <button onClick="zoomOut()">ZoomIn</button>
+    <button onClick="zoomIn()">ZoomOut</button>
+    <button onClick="shareData()">SendMsg</button>
+
+</body>
+<script>
+    const {webFrame,ipcRenderer} = require('electron');
+
+    function zoomOut() {
+        webFrame.setZoomFactor(webFrame.getZoomFactor() - 1);
+    }
+
+    function zoomIn() {
+        webFrame.setZoomFactor(webFrame.getZoomFactor() + 1);
+    }
+
+    function shareData(){
+        console.log('call');
+        ipcRenderer.send("msg","helllo world")
+    }
+
+</script>
+</html>
