@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+        <style>
+            body{
+                margin: 0;
+                padding: 0;
+            }
+            #products{
+                height: 100vh;
+                overflow-y: auto;
+                padding: 2px;
+            }
+        </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <main class="container-fluid">
+        <div class="row">
+            <div class="col-md-6 my-auto">
+                <form id="productForm" class="card card-body">
+                    <div class="form-group">
+                        <input type="text" placeholder="Enter the name of products" id="name" class="form-control"
+                            autofocus>
+                    </div>
+                    <div class="form-group">
+                        <input type="number" placeholder="Enter the price" id="number" class="form-control" autofocus>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Enter the description of products" id="description"
+                            class="form-control" autofocus>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <div id="products"></div>
+            </div>
+        </div>
+    </main>
+</body>
+<script src="../js/app.js"></script>
+</html>
